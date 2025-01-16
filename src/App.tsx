@@ -8,6 +8,7 @@ function increase(){
   return (
     <div>
       <h1>{count}</h1>
+      <h1>added new line of code</h1>
       <button onClick= {increase}>Increase</button>
    </div>
   )
