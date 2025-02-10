@@ -17,8 +17,8 @@ function show(){
       
         <ToggleTheme/>
         <Todo/>
-        <AddTask showAddTask={showAddTask} setShowAddTask={setShowAddTask} show={show}/>
-      <button onClick={show} class="dark:bg-blue-400 dark:text-gray-900 py-2 px-4 rounded-md hover:bg-blue-500 bg-blue-600 dark:hover:bg-blue-700 text-white"> ADD TASK</button>
+        <AddTask showAddTask={showAddTask} setShowAddTask={setShowAddTask} show={show} showAddTask={showAddTask}/>
+      <button onClick={show} className="dark:bg-blue-400 dark:text-gray-900 py-2 px-4 rounded-md hover:bg-blue-500 bg-blue-600 dark:hover:bg-blue-700 text-white"> ADD TASK</button>
       
     </div>
      </TodoProvider>
