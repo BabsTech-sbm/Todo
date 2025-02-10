@@ -5,7 +5,7 @@ import ToggleTheme from "./components/ToggleTheme.tsx";
 import { TodoProvider } from './Context/TodoContext.tsx';
 
 function App() {
-const [showAddTask, setShowAddTask] = useState(false)
+const [showAddTask, setShowAddTask] = useState<boolean>(false)
 
 const [word, setWord] = useState("")
 function show(){
