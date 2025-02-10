@@ -13,12 +13,12 @@ function show(){
 }
   return (
     <TodoProvider>
-    <div className="  overflow-hidden bg-white dark:bg-gray-900 min-h-screen flex items-center justify-center flex-col">
+    <div className=" bg-white dark:bg-gray-900 min-h-screen flex items-center justify-center flex-col">
       
         <ToggleTheme/>
         <Todo/>
         <AddTask showAddTask={showAddTask} setShowAddTask={setShowAddTask} show={show}/>
-      <button onClick={show} class="dark:bg-purple-400 dark:text-gray-900 py-2 px-4 rounded-md hover:bg-purple-500 bg-purple-600 dark:hover:bg-purple-700 text-white"> ADD TASK</button>
+      <button onClick={show} class="dark:bg-blue-400 dark:text-gray-900 py-2 px-4 rounded-md hover:bg-blue-500 bg-blue-600 dark:hover:bg-blue-700 text-white"> ADD TASK</button>
       
     </div>
      </TodoProvider>
