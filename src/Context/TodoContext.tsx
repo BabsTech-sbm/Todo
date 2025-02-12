@@ -11,6 +11,7 @@ interface TodoContextType {
   todos: Todo[];
   addTodo: (title: string, description: string) => void;
   toggleTodo: (id: number) => void;
+  deleteTodo: (id: number) => void;
 }
 
 const TodoContext = createContext<TodoContextType | undefined>(undefined);
