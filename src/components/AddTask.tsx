@@ -4,12 +4,12 @@ import { useTodos } from '../Context/TodoContext.tsx';
 
 interface AddTaskProps {
   showAddTask: boolean;
-  setShowAddTask: React.Dispatch<React.SetStateAction<boolean>>;
+  
   show: () => void; 
 }
-const AddTask: React.FC<AddTaskProps>= ({showAddTask, setShowAddTask, show}) => {
-const [title, setTitle] = useState('')
-const [description, setDescription] = useState('')
+const AddTask: React.FC<AddTaskProps>= ({showAddTask, show}) => {
+const [title, setTitle] = useState<String>('')
+const [description, setDescription] = useState<String>('')
 
   const { addTodo } = useTodos();
 

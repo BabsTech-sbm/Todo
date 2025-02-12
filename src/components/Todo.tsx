@@ -3,7 +3,7 @@ import { useTodos } from "../Context/TodoContext.tsx";
 
 const Todo = () => {
   const { todos, toggleTodo } = useTodos();
-  const [openDropdown, setOpenDropdown] = useState<null>(null); // Track open dropdown ID
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null); // Track open dropdown ID
 
   const handleDropdownToggle = (id: number) => {
     setOpenDropdown(openDropdown === id ? null : id);
@@ -59,7 +59,7 @@ const Todo = () => {
 
                     {/* 3 Dots Button */}
                     <button
-                      onClick={() => handleDropdownToggle(todo.id)}
+                      onClick={() => handleDropdownToggle(String(todo.id))}
                       className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 text-xl focus:outline-none"
                     >
                       &#x22EE;
