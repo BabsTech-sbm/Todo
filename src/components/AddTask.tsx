@@ -1,15 +1,13 @@
-import React from 'react'
+
 import { useState } from 'react'
 import { useTodos } from '../Context/TodoContext.tsx';
 
 interface AddTaskProps {
   showAddTask: boolean;
   setShowAddTask: React.Dispatch<React.SetStateAction<boolean>>;
+  show: () => void; 
 }
 const AddTask: React.FC<AddTaskProps>= ({showAddTask, setShowAddTask, show}) => {
-function show(){
-  setShowAddTask(prev => !prev)
-}
 const [title, setTitle] = useState('')
 const [description, setDescription] = useState('')
 

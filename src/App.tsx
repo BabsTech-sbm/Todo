@@ -14,6 +14,8 @@ function show(){
     <div className=" bg-white dark:bg-gray-900 min-h-screen flex items-center justify-center flex-col">
       
         <ToggleTheme/>
+        
+        
         <Todo/>
         <AddTask setShowAddTask={setShowAddTask} show={show} showAddTask={showAddTask}/>
       <button onClick={show} className="dark:bg-blue-400 dark:text-gray-900 py-2 px-4 rounded-md hover:bg-blue-500 bg-blue-600 dark:hover:bg-blue-700 text-white"> ADD TASK</button>

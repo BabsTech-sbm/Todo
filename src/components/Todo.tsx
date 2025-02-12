@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import {useState} from 'react'
 import { useTodos } from "../Context/TodoContext.tsx";
 
 const Todo = () => {
   const { todos, toggleTodo } = useTodos();
-  const [openDropdown, setOpenDropdown] = useState(null); // Track open dropdown ID
+  const [openDropdown, setOpenDropdown] = useState<null>(null); // Track open dropdown ID
 
   const handleDropdownToggle = (id: number) => {
     setOpenDropdown(openDropdown === id ? null : id);
