@@ -29,10 +29,10 @@ const Todo = () => {
               {todos.map((todo) => (
                 <tr
                   key={todo.id}
-                  className="border-b border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+                  className="  border-b border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
                 >
-                  <td className="p-4">{todo.title}</td>
-                  <td className="p-4">{todo.description}</td>
+                  <td className={`p-4 ${todo.completed ? "line-through": ""}`}>{todo.title}</td>
+                  <td className={`p-4 ${todo.completed ? "line-through": ""}`}>{todo.description}</td>
                   <td className="p-4 text-center">
                     <input
                       type="checkbox"

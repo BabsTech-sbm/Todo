@@ -30,7 +30,7 @@ export const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
       id: Date.now(),
       title,
       description,
-      completed: false,
+      completed: true,
     };
     setTodos([...todos, newTodo]);
   };
