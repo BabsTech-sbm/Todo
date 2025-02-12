@@ -44,8 +44,8 @@ const [description, setDescription] = useState('')
           className="w-full px-4 py-2 border dark:border-gray-700 border-gray-300 rounded-lg focus:outline-none  focus:border-gray-600 dark:text-gray-200 text-black dark:bg-gray-900 resize-none"
            id="todoDescription"
         placeholder="Enter your todo description here..."
-        rows="4"
-        cols="50"
+        rows={4}
+        cols={50}
         required
       />
        
