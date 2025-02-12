@@ -30,7 +30,7 @@ export const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
       id: Date.now(),
       title,
       description,
-      completed: true,
+      completed: false,
     };
     setTodos([...todos, newTodo]);
   };
@@ -44,8 +44,14 @@ export const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
     );
   };
 
+const deleteTodo = (id: number) => {
+    setTodos(
+      todos.filter((todo) =>
+        todo.id !== id)
+        );
+  };
   return (
-    <TodoContext.Provider value={{ todos, addTodo, toggleTodo }}>
+    <TodoContext.Provider value={{ todos, addTodo, toggleTodo, deleteTodo }}>
       {children}
     </TodoContext.Provider>
   );

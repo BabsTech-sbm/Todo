@@ -2,7 +2,7 @@ import {useState} from 'react'
 import { useTodos } from "../Context/TodoContext.tsx";
 
 const Todo = () => {
-  const { todos, toggleTodo } = useTodos();
+  const { todos, toggleTodo, deleteTodo } = useTodos();
   const [openDropdown, setOpenDropdown] = useState<number | null>(null); // Track open dropdown ID
 
   const handleDropdownToggle = (id: number) => {
@@ -18,8 +18,8 @@ const Todo = () => {
             <thead>
               <tr className="bg-blue-500 dark:bg-blue-700 text-white text-left text-sm sm:text-base">
                 <th className="p-4">Title</th>
-                <th className="p-4">Description</th>
-                <th className="p-4 text-center">Toggle</th>
+                
+                <th className="p-4 text-center">Status</th>
                 <th className="p-4 text-center">Actions</th>
               </tr>
             </thead>
@@ -29,10 +29,12 @@ const Todo = () => {
               {todos.map((todo) => (
                 <tr
                   key={todo.id}
-                  className="  border-b border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+                  className="  border-b border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 transition  "
                 >
-                  <td className={`p-4 ${todo.completed ? "line-through": ""}`}>{todo.title}</td>
-                  <td className={`p-4 ${todo.completed ? "line-through": ""}`}>{todo.description}</td>
+                  <td className={`p-4 ${todo.completed ? "text-gray-400 select-none": ""} `}
+                  
+                  >{todo.title}</td>
+                
                   <td className="p-4 text-center">
                     <input
                       type="checkbox"
@@ -45,10 +47,15 @@ const Todo = () => {
                     {/* Dropdown Menu */}
                     {openDropdown === todo.id && (
                       <div className=" absolute bottom-full right-0 mb-2 w-32 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded shadow-lg z-50 ">
+                        
+                        <button className="block w-full text-left px-4 py-2 text-green-500 hover:bg-gray-200 dark:hover:bg-gray-700">
+                          Info
+                        </button>
+                        
                         <button className="block w-full text-left px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
                           Edit
                         </button>
-                        <button className="block w-full text-left px-4 py-2 text-red-500 hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <button className="block w-full text-left px-4 py-2 text-red-500 hover:bg-gray-200 dark:hover:bg-gray-700" onClick= {()=>{deleteTodo(todo.id)}}>
                           Delete
                         </button>
                      
