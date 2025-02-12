@@ -8,19 +8,19 @@ interface AddTaskProps {
   show: () => void; 
 }
 const AddTask: React.FC<AddTaskProps>= ({showAddTask, show}) => {
-const [title, setTitle] = useState<string>('')
-const [description, setDescription] = useState<string>('')
+const [title, setTitle] = useState('')
+const [description, setDescription] = useState('')
 
   const { addTodo } = useTodos();
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (title.trim() && description.trim()) {
-      addTodo(title, description);
-      setTitle('');
-      setDescription('');
-    }
-  };
+  e.preventDefault();
+  if (title.trim() && description.trim()) {
+    addTodo(title, description); // Ensure addTodo accepts (string, string)
+    setTitle('');
+    setDescription('');
+  }
+};
   return (
    <div className={` ${showAddTask ? "flex": "hidden"} fixed inset-0 dark:bg-gray-700 flex items-center justify-center bg-opacity-50 dark:bg-opacity-50 dark:text-gray-200 text-gray-900 font-sans bg-black/10`}>
   <div className=" relative bg-white dark:bg-gray-900 rounded-lg shadow-lg w-96 p-6">

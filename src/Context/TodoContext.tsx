@@ -27,7 +27,7 @@ export const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
   // Function to add a new todo
   const addTodo = (title: string, description: string) => {
     const newTodo: Todo = {
-      id: Number(Date.now()),
+      id: Date.now(),
       title,
       description,
       completed: false,

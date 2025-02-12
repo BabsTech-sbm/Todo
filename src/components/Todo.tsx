@@ -59,7 +59,7 @@ const Todo = () => {
 
                     {/* 3 Dots Button */}
                     <button
-                      onClick={() => handleDropdownToggle(String(todo.id))}
+                      onClick={() => handleDropdownToggle(todo.id)}
                       className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 text-xl focus:outline-none"
                     >
                       &#x22EE;
