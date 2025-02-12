@@ -8,8 +8,8 @@ interface AddTaskProps {
   show: () => void; 
 }
 const AddTask: React.FC<AddTaskProps>= ({showAddTask, show}) => {
-const [title, setTitle] = useState<String>('')
-const [description, setDescription] = useState<String>('')
+const [title, setTitle] = useState<string>('')
+const [description, setDescription] = useState<string>('')
 
   const { addTodo } = useTodos();
 
