@@ -5,7 +5,7 @@ const Todo = () => {
   const { todos, toggleTodo } = useTodos();
   const [openDropdown, setOpenDropdown] = useState(null); // Track open dropdown ID
 
-  const handleDropdownToggle = (id) => {
+  const handleDropdownToggle = (id: number) => {
     setOpenDropdown(openDropdown === id ? null : id);
   };
 

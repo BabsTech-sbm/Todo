@@ -1,7 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
 import { useTodos } from '../Context/TodoContext.tsx';
-const AddTask: React.FC = ({showAddTask, setShowAddTask, show}) => {
+
+interface AddTaskProps {
+  showAddTask: boolean;
+  setShowAddTask: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const AddTask: React.FC<AddTaskProps>= ({showAddTask, setShowAddTask, show}) => {
 function show(){
   setShowAddTask(prev => !prev)
 }

@@ -6,8 +6,6 @@ import { TodoProvider } from './Context/TodoContext.tsx';
 
 function App() {
 const [showAddTask, setShowAddTask] = useState<boolean>(false)
-
-const [word, setWord] = useState("")
 function show(){
   setShowAddTask(prev => !prev)
 }
